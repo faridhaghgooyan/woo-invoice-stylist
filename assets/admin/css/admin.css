@@ -12,11 +12,16 @@
         width: 50px;
         border-radius: 10px;
     }
-#woo-invoice-stylist-page #styles .style-shot{
+#woo-invoice-stylist-page #styles{
     display: flex;
 }
+#woo-invoice-stylist-page #styles .style-shot{
+    display: flex;
+    width: 25%;
+    margin: .5rem;
+}
     #woo-invoice-stylist-page #styles .content{
-        flex-basis: 25%;
+        flex-basis: 100%;
         text-align: center;
         background: white;
         border-radius: 15px;
