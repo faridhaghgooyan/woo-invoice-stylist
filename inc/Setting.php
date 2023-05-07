@@ -26,6 +26,12 @@ class Setting extends WooInvoiceStylist
     {
         $setting_file = plugin_dir_path(dirname(__FILE__)) . 'setting.json';
         $current_setting = json_decode( file_get_contents( $setting_file ) );
+        if ( $_FILES['logo']['size'] ){
+            $current_setting->setting->logo = parent::UploadMedia( $_FILES['logo'] , $current_setting->setting->logo );
+        }
+        if ( $_FILES['signature']['size'] ){
+            $current_setting->setting->signature = parent::UploadMedia( $_FILES['signature'] , $current_setting->setting->signature );
+        }
 
         $current_setting->setting = [
             'base_color'     => $_POST['base_color'],
@@ -36,8 +42,8 @@ class Setting extends WooInvoiceStylist
             'mobile'         => $_POST['mobile'],
             'fax'            => $_POST['fax'],
             'address'        => $_POST['address'],
-            'logo'           => self::UpdateLogo($_FILES),
-            'signature'      => self::UpdateSignature($_FILES),
+            'logo'           => $current_setting->setting->logo,
+            'signature'      => $current_setting->setting->signature,
         ];
 
         if ($_POST['billing_fields']){
@@ -52,21 +58,5 @@ class Setting extends WooInvoiceStylist
         $redirect_url = wp_get_referer();
         wp_redirect( $redirect_url );
         exit;
-    }
-    private static function UpdateLogo($files) : string
-    {
-        $default = plugin_dir_url(dirname(__FILE__)) . 'assets/images/logo.png';
-        if ( isset( $files['logo'] ) && ! empty( $files['logo']['name'] ) ){
-            $default = WooInvoiceStylist::UploadMedia( $files['logo']) ?? $default;
-        }
-        return $default;
-    }
-    private static function UpdateSignature($files) : string
-    {
-        $default = plugin_dir_url(dirname(__FILE__)) . 'assets/images/signature.png';
-        if ( isset( $files['signature'] ) && ! empty( $files['signature']['name'] ) ){
-            $default = WooInvoiceStylist::UploadMedia( $files['signature'] ) ?? $default;
-        }
-        return $default;
     }
 }

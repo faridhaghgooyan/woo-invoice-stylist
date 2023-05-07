@@ -29,20 +29,18 @@ class WooInvoiceStylist
         add_action( 'admin_post_nopriv_woo_invoice_stylist_action', array(Setting::class,'UpdateSetting') );
         add_action( 'plugins_loaded', array(Translator::class,'RegisterTranslator') );
     }
-    protected static function UploadMedia( $file )
+    protected static function UploadMedia( $file , $old_path = '' ) : string
     {
-        $id = str_replace(['(',')','_','?','!'],'',pathinfo($file['name'],PATHINFO_FILENAME));
-        if ($id != 'logo'){
+        $upload_overrides = array( 'test_form' => false );
+        $movefile = wp_handle_upload( $file, $upload_overrides );
 
-        }
-
-        $attachment_id = media_handle_upload( $id, 0 );
-        if ( is_wp_error( $attachment_id ) ) {
-            $error_message = $attachment_id->get_error_message();
-            return null;
+        if ( $movefile && !isset($movefile['error']) ) {
+            // File was successfully uploaded
+            $file_url = $movefile['url'];
+            return $file_url;
         } else {
-            // The logo was uploaded successfully
-            return wp_get_attachment_url( $attachment_id );
+            // Error uploading the file
+            return $old_path;
         }
     }
 }
