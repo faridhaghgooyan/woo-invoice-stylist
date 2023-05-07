@@ -14,7 +14,7 @@
     <a href="#keyboard-usage">Usage</a> &#xa0; | &#xa0;
     <a href="#speech_balloon-feedback">Feedback</a> &#xa0; | &#xa0;
     <a href="#briefcase-about-me">About Developer</a> &#xa0; | &#xa0;
-    <a href="#heart-donate">Donate</a> &#xa0; | &#xa0;
+    <a href="#coffee-buy-me-a-coffee">Buy Me A Coffee</a> &#xa0; | &#xa0;
     <a href="#balance_scale-license">License</a> &#xa0; | &#xa0;
     <a href="#memo-Sources">Sources</a> 
 </p>
@@ -49,8 +49,6 @@ I'm always looking for feedback from users. If you have any suggestions or ideas
 
 ## :briefcase: About Me ##
 
-## About Me :bust_in_silhouette:
-
 Hi there! My name is Farid Haghgooyan, and I am a PHP developer with 5 years of experience based in Germany. I am passionate about open-source development and working in the e-commerce field.
 
 My goal as a developer is to create tools and plugins that make the development process easier and more efficient. I believe that technology should be accessible to everyone, and I strive to make my work as user-friendly as possible.
@@ -67,15 +65,13 @@ The following tools were used in this project:
 - [CSS](https://www.w3schools.com/css/)
 - [JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-## :heart: Donate ##
-
-## Buy Me A Coffee :coffee:
+## :coffee: Buy Me A Coffee ##
 
 If you find this plugin helpful and want to support its continued development, please consider buying me a coffee. Your support helps me to maintain this plugin and develop new features, ensuring that it remains a valuable resource for the WordPress community.
 
 To buy me a coffee, simply click the button below to visit my Buy Me A Coffee page. Any amount, no matter how small, is greatly appreciated.
 
-[![Buy Me A Coffee](https://www.buymeacoffee.com/mrhaghgooyan)
+[Buy Me A Coffee](https://www.buymeacoffee.com/mrhaghgooyan)
 
 
 ## :balance_scale: License ##
