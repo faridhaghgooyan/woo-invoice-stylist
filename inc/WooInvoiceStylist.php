@@ -14,8 +14,8 @@ class WooInvoiceStylist
 {
     public static string $app_name = 'woo-invoice-stylist';
     public static array $styles = [
-        'style01',
-        'style02',
+        'style01' => 'woo classic',
+        'style02' => 'modernized',
     ];
     public static object $config;
     public static function init() : void

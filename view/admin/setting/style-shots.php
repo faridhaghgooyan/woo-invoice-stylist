@@ -1,5 +1,5 @@
 <?php
-foreach (\inc\WooInvoiceStylist::$styles as $style){
+foreach (\inc\WooInvoiceStylist::$styles as $style => $style_name){
     $checked = $style === \inc\Setting::GetSetting('style') ? 'checked' : '';
     $screen_shot = plugin_dir_url(dirname(__FILE__,3)) . 'assets/images/style-shots/' . $style . '.png';
     echo "
@@ -9,7 +9,7 @@ foreach (\inc\WooInvoiceStylist::$styles as $style){
                     <img src='$screen_shot' alt='$style'>
                 </a>
                 <input $checked type='radio' name='style' value='$style'>
-                <h5 class='style-name'>".ucwords($style)."</h5>
+                <h5 class='style-name'>".ucwords($style_name)."</h5>
             </div>
         </div>
     ";
