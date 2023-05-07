@@ -15,7 +15,14 @@ class Config
         'logo'      => '/wp-content/plugins/woo-invoice-stylist/assets/images/default_logo.png',
         'signature' => '/wp-content/plugins/woo-invoice-stylist/assets/images/default_signature.png'
     ];
-
+    /**
+     * Loads the configuration settings for the plugin.
+     *
+     * Reads the plugin's settings from a JSON file and returns an array of configuration values.
+     * If the configuration file does not exist, the default configuration values will be used.
+     *
+     * @return array An array of configuration values for the plugin.
+     */
     public static function LoadConfig()
     {
         $json_config = plugin_dir_path( dirname( __FILE__ ) ) . 'setting.json';
@@ -23,9 +30,20 @@ class Config
         if ( !file_exists( $json_config ) ) return self::$default_config;
         $configs = json_decode( file_get_contents($json_config) , true );
 
-
         return $configs;
     }
+    /**
+     * Returns the default fields for the specified tab of the invoice settings.
+     *
+     * @param string $tab_name The name of the tab whose fields to return.
+     * @return array An array of field objects with the following keys:
+     *               - label: the label of the field
+     *               - type: the type of the input element (text, textarea, file)
+     *               - name: the name of the input element (used as key in the settings array)
+     *               - required: the 'required' attribute of the input element (empty string for non-required fields)
+     *               - placeholder: the placeholder text of the input element
+     *               - attributes: additional attributes of the input element
+     */
     public static function InvoiceFields( $tab_name ) : array
     {
         $default_fields = [
@@ -93,6 +111,13 @@ class Config
         ];
         return $default_fields[ $tab_name ];
     }
+    /**
+     * Generate HTML markup for a single invoice field.
+     *
+     * @param array $field An array containing field configuration options.
+     *
+     * @return void
+     */
     public static function InvoiceFieldHTML( $field ) : void
     {
         $field = (object)$field;
@@ -123,6 +148,14 @@ class Config
 
         echo $html;
     }
+
+    /**
+     * Check if the given invoice option is valid.
+     *
+     * @param $field
+     * @param $field_name
+     * @return void Returns true if the option is valid, false otherwise.
+     */
     public static function CheckInvoiceOption( $field , $field_name ) : void
     {
         echo in_array( $field_name, self::LoadConfig()[$field]) ? 'checked' : '';
