@@ -3,7 +3,7 @@
 Plugin Name: Woo Invoice Stylist
 Plugin URI: https://mrhaghgooyan.com/wordpress/woo-invoice-stylist
 Description: I have written this plugin to make invoicing easier to manage.
-Version: 1.0
+Version: 1.0.0
 Requires PHP: 5.2
 Author: Farid HaghGooyan
 Author URI: https://mrhaghgooyan.com

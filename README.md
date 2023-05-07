@@ -45,7 +45,7 @@ This plugin allows WordPress site administrators to customize their user order i
 
 ## :speech_balloon: Feedback ##
 
-I'm always looking for feedback from users. If you have any suggestions or ideas for improving the plugin, please don't hesitate to [open an issue](https://github.com/faridhaghgooyan/woo-invoice-stylist/issues) on our GitHub repository.
+I'm always looking for feedback from users. If you have any suggestions or ideas for improving the plugin, please don't hesitate to [open an issue](https://github.com/faridhaghgooyan/woo-invoice-stylist/issues) on our GitHub repository or email me : [faridhaghgooyan@gmail.com](mailto:faridhaghgooyan@gmail.com).
 
 ## :briefcase: About Me ##
 
