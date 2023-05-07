@@ -33,6 +33,9 @@
         <p>Contact to report a bug or maybe a develop:
             <a href="mailto:faridhaghgooyan@gmail.com">faridhaghgooyan@gmail.com</a>
         </p>
+        <p>Github:
+            <a href="https://github.com/faridhaghgooyan/woo-invoice-stylist" target="_blank"> Click Here </a>
+        </p>
         <p>Visit plugin website:
             <a href="https://mrhaghgooyan.com/plugins/woo-invoice-stylist" target="_blank"> Click Here </a>
         </p>
