@@ -18,7 +18,7 @@ class Setting extends WooInvoiceStylist
             'address'        => 'Nuremberg, Germany',
         ];
         $setting_file = plugin_dir_path(dirname(__FILE__)) . 'setting.json';
-        $user_setting = json_decode(file_get_contents($setting_file),true);
+        $user_setting = json_decode(file_get_contents($setting_file),true)['setting'];
         if ( !$key ) return (object)array_merge($defaults,$user_setting);
         return array_merge($defaults,$user_setting)[$key];
     }
