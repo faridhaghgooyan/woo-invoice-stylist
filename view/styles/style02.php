@@ -1,19 +1,19 @@
 <!--Woo Invoice Stylist Start | Style 02-->
-<section id="woo-invoice-stylist" class="style02">
+<section id="invoice-stylist" class="style02">
     <!--Invoice Header Start-->
     <div class="invoice-header d-flex justify-content-between align-items-center">
         <div class="featured-image-wrapper w-50">
             <img src="<?php echo $data->setting->logo ?>" alt="Store Logo" class="logo w-50">
         </div>
         <h3 class="invoice-keyword w-50 font-size-xl text-right m-0">
-            <?php _e('invoice','woo-invoice-stylist'); ?>
+            <?php _e('invoice','invoice-stylist'); ?>
         </h3>
     </div>
     <!--Invoice Header End-->
     <div class="invoice-info d-flex justify-content-between">
         <div class="invoice-to d-flex">
             <h5 class="invoice-ti-title font-size-m font-bold uppercase m-0">
-                <?php _e('invoice to:','woo-invoice-stylist'); ?>
+                <?php _e('invoice to:','invoice-stylist'); ?>
             </h5>
             <ul class="info-list list-style-none">
                 <?php
@@ -31,7 +31,7 @@
         <div class="invoice-no-date text-right">
             <div class="invoice-no">
                 <h5 class="title font-size-m font-bold uppercase m-0">
-                    <?php _e('invoice no','woo-invoice-stylist'); ?>
+                    <?php _e('invoice no','invoice-stylist'); ?>
                 </h5>
                 <span class="content font-light color-primary">
                         #<?php echo $data->order->invoice_id ?>
@@ -39,7 +39,7 @@
             </div>
             <div class="invoice-date">
                 <h5 class="title font-size-m font-bold uppercase m-0">
-                    <?php _e('date','woo-invoice-stylist'); ?>
+                    <?php _e('date','invoice-stylist'); ?>
                 </h5>
                 <span class="content font-light color-primary">
                     <?php echo $data->order->dates->created ?>
@@ -85,7 +85,7 @@
         <div class="order-summary-wrapper d-flex justify-content-between">
             <div class="w-60">
                 <h5 class="font-size-m font-bold uppercase m-0">
-                    <?php _e('payment method:','woo-invoice-stylist'); ?>
+                    <?php _e('payment method:','invoice-stylist'); ?>
                 </h5>
                 <h5 class="font-size-s font-bold uppercase m-0">
                     <?php echo $data->order->gateway ?>
@@ -159,7 +159,7 @@
 
 </section>
 <!--Woo Invoice Stylist End | Style 01-->
-<section id="woo-invoice-stylist-actions">
-    <button onclick="WooInvoiceStylist.Print(event)"><?php _e('Print','woo-invoice-stylist'); ?></button>
-    <button onclick="WooInvoiceStylist.SaveAsPDF(event)"><?php _e('Save As PDF','woo-invoice-stylist'); ?></button>
+<section id="invoice-stylist-actions">
+    <button onclick="WooInvoiceStylist.Print(event)"><?php _e('Print','invoice-stylist'); ?></button>
+    <button onclick="WooInvoiceStylist.SaveAsPDF(event)"><?php _e('Save As PDF','invoice-stylist'); ?></button>
 </section>

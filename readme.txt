@@ -1,4 +1,4 @@
-=== Woo Invoice Stylist ===
+=== Invoice Stylist ===
 Contributors: faridhaghgooyan
 Donate link: https://www.buymeacoffee.com/mrhaghgooyan
 Tags: invoice, woocommerce invoice, invoice template, invoice styles, invoice customize

@@ -1,4 +1,4 @@
-<h1 align="center">Woo Invoice Stylist</h1>
+<h1 align="center">Invoice Stylist</h1>
 
 <p align="center">
   <img alt="Github language count" src="https://img.shields.io/badge/Technologies-PHP,%20JavaScript,%20CSS-blue">
@@ -38,7 +38,7 @@ This plugin allows WordPress site administrators to customize their user order i
 
 ## :keyboard: Usage ##
 
-- Navigate to the Woo Invoice Stylist settings page in the WordPress admin panel.
+- Navigate to the Invoice Stylist settings page in the WordPress admin panel.
 - Choose the template you want to use for your user order invoices.
 - Customize the data displayed on the invoices by selecting the fields you want to include.
 - Save your changes and your user order invoices will now use the selected template and display the customized data.

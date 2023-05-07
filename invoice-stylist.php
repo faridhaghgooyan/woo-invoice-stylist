@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Woo Invoice Stylist
+Plugin Name: Invoice Stylist
 Plugin URI: https://mrhaghgooyan.com/wordpress/woo-invoice-stylist
 Description: This plugin allows WordPress site administrators to customize their user order invoices by modifying the data displayed and choosing from multiple templates.
 Version: 1.0.0
@@ -8,7 +8,7 @@ Requires PHP: 5.2
 Author: Farid HaghGooyan
 Author URI: https://mrhaghgooyan.com
 License: GPLv2 or later
-Text Domain: woo-invoice-stylist
+Text Domain: invoice-stylist
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 2 of the License, or

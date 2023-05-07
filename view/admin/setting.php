@@ -1,22 +1,22 @@
 <div id="woo-invoice-stylist-page" class="wrap">
     <!-- Page Title -->
     <h1>
-        <?php _e('Woo Invoice Stylist','woo-invoice-stylist'); ?>
+        <?php _e('Woo Invoice Stylist','invoice-stylist'); ?>
     </h1>
 
     <!-- Tabs -->
     <h2 class="nav-tab-wrapper">
         <a href="#general" class="nav-tab nav-tab-active">
-            <?php _e('General','woo-invoice-stylist'); ?>
+            <?php _e('General','invoice-stylist'); ?>
         </a>
         <a href="#identity" class="nav-tab">
-            <?php _e('Identity','woo-invoice-stylist'); ?>
+            <?php _e('Identity','invoice-stylist'); ?>
         </a>
         <a href="#styles" class="nav-tab">
-            <?php _e('Styles','woo-invoice-stylist'); ?>
+            <?php _e('Styles','invoice-stylist'); ?>
         </a>
         <a href="#about" class="nav-tab">
-            <?php _e('About','woo-invoice-stylist'); ?>
+            <?php _e('About','invoice-stylist'); ?>
         </a>
     </h2>
 
@@ -37,6 +37,6 @@
 
         <hr>
         <!-- Form Actions -->
-        <button><?php _e('Save','woo-invoice-stylist'); ?></button>
+        <button><?php _e('Save','invoice-stylist'); ?></button>
     </form>
 </div>

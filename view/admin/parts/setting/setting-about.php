@@ -2,9 +2,9 @@
     <section>
         <h2>About</h2>
         <p>
-            Welcome to Woo Invoice Stylist - the perfect plugin for anyone who wants to give their invoices a modern and professional appearance. I created this plugin to give business owners the ability to customize their invoices and make them stand out.
+            Welcome to Invoice Stylist - the perfect plugin for anyone who wants to give their invoices a modern and professional appearance. I created this plugin to give business owners the ability to customize their invoices and make them stand out.
 
-            But I didn't stop there - I have big plans for Woo Invoice Stylist! In the future, I plan to add features such as
+            But I didn't stop there - I have big plans for Invoice Stylist! In the future, I plan to add features such as
             <b>invoice download statistics</b>
             and the ability to
             <b>share invoices with friends</b>
@@ -34,10 +34,10 @@
             <a href="mailto:faridhaghgooyan@gmail.com">faridhaghgooyan@gmail.com</a>
         </p>
         <p>Github:
-            <a href="https://github.com/faridhaghgooyan/woo-invoice-stylist" target="_blank"> Click Here </a>
+            <a href="https://github.com/faridhaghgooyan/invoice-stylist" target="_blank"> Click Here </a>
         </p>
         <p>Visit plugin website:
-            <a href="https://mrhaghgooyan.com/plugins/woo-invoice-stylist" target="_blank"> Click Here </a>
+            <a href="https://mrhaghgooyan.com/plugins/invoice-stylist" target="_blank"> Click Here </a>
         </p>
         <p>Donate for continue:
             <a href="https://www.buymeacoffee.com/mrhaghgooyan" target="_blank"> Click Here </a>

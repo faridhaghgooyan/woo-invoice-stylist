@@ -1,5 +1,5 @@
 <!--Woo Invoice Stylist Start | Style 01-->
-<section id="woo-invoice-stylist" class="style01">
+<section id="invoice-stylist" class="style01">
     <!--Invoice Header Start-->
     <div class="invoice-header">
         <img src="<?php echo \inc\Setting::GetSetting('logo') ?>" alt="Store Logo" class="logo">
@@ -23,7 +23,7 @@
         </div>
         <div class="invoice-date-and-id">
             <span class="invoice-title">
-                <?php _e('invoice','woo-invoice-stylist'); ?>
+                <?php _e('invoice','invoice-stylist'); ?>
             </span>
             <span class="date">
                 <?php echo $data->order->dates->created ?>
@@ -40,7 +40,7 @@
         <!--Customer Info-->
         <div class="billing-info">
             <h5 class="billing-title">
-                <?php _e('bill to','woo-invoice-stylist'); ?>
+                <?php _e('bill to','invoice-stylist'); ?>
             </h5>
             <ul class="info-list">
                 <?php
@@ -53,7 +53,7 @@
         </div>
         <div class="shipping-info">
             <h5 class="shipping-title">
-                <?php _e('ship to','woo-invoice-stylist'); ?>
+                <?php _e('ship to','invoice-stylist'); ?>
             </h5>
             <ul class="info-list">
                 <?php
@@ -142,7 +142,7 @@
 
 </section>
 <!--Woo Invoice Stylist End | Style 01-->
-<section id="woo-invoice-stylist-actions">
-    <button onclick="WooInvoiceStylist.Print(event)"><?php _e('Print','woo-invoice-stylist'); ?></button>
-    <button onclick="WooInvoiceStylist.SaveAsPDF(event)"><?php _e('Save As PDF','woo-invoice-stylist'); ?></button>
+<section id="invoice-stylist-actions">
+    <button onclick="WooInvoiceStylist.Print(event)"><?php _e('Print','invoice-stylist'); ?></button>
+    <button onclick="WooInvoiceStylist.SaveAsPDF(event)"><?php _e('Save As PDF','invoice-stylist'); ?></button>
 </section>
