@@ -2,7 +2,7 @@
 
 <p align="center">
   <img alt="Github language count" src="https://img.shields.io/badge/Technologies-PHP,%20JavaScript,%20CSS-blue">
-  <img alt="License" src="https://img.shields.io/badge/License-MIT-yellow.svg">
+  <img alt="License" src="https://img.shields.io/badge/license-GPLv2-green.svg">
   <img alt="Github stars" src="https://img.shields.io/github/stars/faridhaghgooyan/programming-challenges?color=56BEB8" />
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/faridhaghgooyan/programming-challenges?color=56BEB8">
 </p>
