@@ -88,7 +88,7 @@
                     <?php _e('payment method:','woo-invoice-stylist'); ?>
                 </h5>
                 <h5 class="font-size-s font-bold uppercase m-0">
-                    Paypal
+                    <?php echo $data->order->gateway ?>
                 </h5>
                 <h5 class="font-size-xs font-light m-0">
                     mrhaghgooyan@gmail.com

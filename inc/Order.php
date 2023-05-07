@@ -29,6 +29,7 @@ class Order
             'process'          => self::$order->get_customer_order_notes(),
             'currency'         => get_woocommerce_currency(),
             'currency_symbol'  => get_woocommerce_currency_symbol(),
+            'gateway'          => self::$order ->get_payment_method(),
         ];
     }
 
