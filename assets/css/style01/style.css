@@ -1,0 +1,201 @@
+/*Common Mixins*/
+.style01 {
+    border-top: 2rem solid var(--color-primary);
+    border-bottom: 2rem solid var(--color-primary);
+}
+.style01 .invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: rgba(237, 237, 237, 0.492);
+    padding: 1rem 0.5rem;
+}
+.style01 .invoice-header .logo {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    flex-basis: 5%;
+}
+.style01 .invoice-header .store-info {
+    flex-basis: 60%;
+    color: gray;
+}
+.style01 .invoice-header .store-info .store-name {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    color: black;
+}
+.style01 .invoice-header .store-info .store-address {
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+}
+.style01 .invoice-header .store-info :where(.store-phone, .store-fax, .store-website) {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+}
+.style01 .invoice-header .invoice-date-and-id {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+    text-align: center;
+}
+.style01 .invoice-header .invoice-date-and-id .invoice-title {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+}
+.style01 .invoice-header .invoice-date-and-id :where(.date, .id) {
+    margin-top: 0.5rem;
+}
+.style01 .invoice-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem 0.5rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+.style01 .invoice-body :where(.billing-info, .shipping-info) {
+    flex-basis: 45%;
+}
+.style01 .invoice-body .info-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.style01 .invoice-body .info-list .info-item {
+    padding: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+}
+.style01 .invoice-body .info-list .info-item .label-name{
+    opacity: .6;
+}
+.style01 .invoice-body :where(.billing-title, .shipping-title) {
+    color: var(--color-primary);
+    border-bottom: 1px dashed rgb(172, 172, 172);
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 0 0 0.5rem 0;
+    margin: 0 0 0.5rem 0;
+}
+.style01 .invoice-body table.order-items {
+    flex-basis: 100%;
+    margin: 1rem 0;
+    border: 1px dashed rgb(172, 172, 172);
+}
+.style01 .invoice-body table.order-items :where(td, th) {
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+.style01 .invoice-body table.order-items thead tr {
+    background-color: var(--color-primary) !important;
+    color: white;
+}
+.style01 .invoice-body table.order-items tbody tr:nth-child(even) {
+    background: rgba(237, 237, 237, 0.492);
+}
+.style01 .invoice-body .order-summary-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.style01 .invoice-body .order-summary-wrapper .order-summary {
+    flex-basis: 40%;
+    list-style: none;
+    margin: 0;
+}
+.style01 .invoice-body .order-summary-wrapper .order-summary .summary-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    border-bottom: 1px dashed rgb(172, 172, 172);
+}
+.style01 .invoice-body .order-summary-wrapper .order-summary .summary-item .item-title {
+    padding: 0.5rem;
+    width: 50%;
+    font-weight: 900;
+}
+.style01 .invoice-body .order-summary-wrapper .order-summary .summary-item .item-value {
+    padding: 0.5rem 1.5rem;
+    width: 50%;
+    text-align: right;
+}
+.style01 .invoice-body .order-summary-wrapper .order-summary .summary-item:last-child {
+    font-size: 1.1rem;
+    font-weight: 900;
+    border-bottom: unset;
+    padding: 1rem 0;
+}
+
+/*Mobile Styles*/
+@media (max-width: 450px) {
+    .style01 .invoice-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .style01 .invoice-header .logo {
+        width: 25%;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+    }
+    .style01 .invoice-header :where(.store-info, .invoice-date-and-id) {
+        width: 100%;
+    }
+    .style01 .invoice-body :where(.billing-info, .shipping-info) {
+        flex-basis: 100%;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    .style01 .invoice-body table.order-items {
+        flex-basis: 100%;
+        margin: 1rem 0;
+        border: 1px dashed rgb(172, 172, 172);
+    }
+    .style01 .invoice-body table.order-items :where(td, th) {
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .style01 .invoice-body table.order-items thead tr {
+        background-color: var(--color-primary);
+        color: white;
+    }
+    .style01 .invoice-body table.order-items tbody tr:nth-child(even) {
+        background: rgba(237, 237, 237, 0.492);
+    }
+    .style01 .invoice-body .order-summary-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .style01 .invoice-body .order-summary-wrapper .order-summary {
+        flex-basis: 100%;
+        padding: 0;
+    }
+    .style01 .invoice-body .order-summary-wrapper .order-summary .summary-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.9rem;
+        border-bottom: 1px dashed rgb(172, 172, 172);
+    }
+    .style01 .invoice-body .order-summary-wrapper .order-summary .summary-item .item-title {
+        padding: 0.5rem;
+        width: 50%;
+        font-weight: 900;
+    }
+    .style01 .invoice-body .order-summary-wrapper .order-summary .summary-item .item-value {
+        padding: 0.5rem 1.5rem;
+        width: 50%;
+        text-align: right;
+    }
+    .style01 .invoice-body .order-summary-wrapper .order-summary .summary-item:last-child {
+        font-size: 1.1rem;
+        font-weight: 900;
+        border-bottom: unset;
+        padding: 1rem 0;
+    }
+}/*# sourceMappingURL=style.css.map */

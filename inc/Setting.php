@@ -4,7 +4,7 @@ namespace inc;
 
 class Setting extends WooInvoiceStylist
 {
-    public static function GetSetting( $key ) : string
+    public static function GetSetting( $key = null )
     {
         $defaults = [
             'style'          =>  'style01',
@@ -19,11 +19,16 @@ class Setting extends WooInvoiceStylist
         ];
         $setting_file = plugin_dir_path(dirname(__FILE__)) . 'setting.json';
         $user_setting = json_decode(file_get_contents($setting_file),true);
+        if ( !$key ) return (object)array_merge($defaults,$user_setting);
         return array_merge($defaults,$user_setting)[$key];
     }
     public static function UpdateSetting() : void
     {
-        $data = [
+        $setting_file = plugin_dir_path(dirname(__FILE__)) . 'setting.json';
+        $current_setting = json_decode( file_get_contents( $setting_file ) );
+
+        $current_setting->setting = [
+            'base_color'     => $_POST['base_color'],
             'style'          => $_POST['style'],
             'title'          => $_POST['title'],
             'website'        => $_POST['website'],
@@ -31,12 +36,18 @@ class Setting extends WooInvoiceStylist
             'mobile'         => $_POST['mobile'],
             'fax'            => $_POST['fax'],
             'address'        => $_POST['address'],
+            'logo'           => self::UpdateLogo($_FILES),
+            'signature'      => self::UpdateSignature($_FILES),
         ];
-        $data['logo'] = self::UpdateLogo($_FILES);
-        $data['signature'] = self::UpdateSignature($_FILES);
-        $setting_file = plugin_dir_path(dirname(__FILE__)) . 'setting.json';
-        file_put_contents($setting_file,json_encode($data));
 
+        if ($_POST['billing_fields']){
+            $current_setting->billing_fields = array_keys($_POST['billing_fields']);
+        }
+        if ($_POST['shipping_fields']){
+            $current_setting->shipping_fields = array_keys($_POST['shipping_fields']);
+        }
+
+        file_put_contents( $setting_file, json_encode( $current_setting ) );
         // Redirect back to the previous page
         $redirect_url = wp_get_referer();
         wp_redirect( $redirect_url );

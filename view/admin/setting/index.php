@@ -19,6 +19,7 @@
     <form action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="action" value="woo_invoice_stylist_action">
         <!-- General Setting -->
+        <?php wc_get_template('setting-general.php'); ?>
         <div id="general" class="woo-invoice-stylist-tab">
             <label>
                 <small class="field-title">

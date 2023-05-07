@@ -1,0 +1,109 @@
+:root{
+    --font-size-xxs : .7rem;
+    --font-size-xs : .8rem;
+    --font-size-s : .9rem;
+    --font-size-m : 1.0rem;
+    --font-size-l : 1.1rem;
+    --font-size-xl : 2.0rem;
+    --font-size-xxl : 3.0rem;
+
+    --color-primary : #8053B5;
+    --color-black : #121212;
+}
+/*Font Common Styles Start*/
+.font-size-xxs{font-size: var(--font-size-xxs)!important;}
+.font-size-xs{font-size: var(--font-size-xs)!important;}
+.font-size-s{font-size: var(--font-size-s)!important;}
+.font-size-m{font-size: var(--font-size-m)!important;}
+.font-size-l{font-size: var(--font-size-l)!important;}
+.font-size-xl{font-size: var(--font-size-xl)!important;}
+.font-size-xxl{font-size: var(--font-size-xxl)!important;}
+.font-bold{font-weight: 900}
+.font-regular{font-weight: 400}
+.font-light{font-weight: 100}
+.uppercase{text-transform: uppercase}
+.lowercase{text-transform: lowercase}
+.text-right{text-align: right;}
+.text-left{text-align: left;}
+.text-center{text-align: center!important;}
+/*Font Common Styles End*/
+
+/*Color Common Styles Start*/
+.color-primary{color: var(--color-primary)}
+.color-black{color: var(--color-black)}
+/*Color Common Styles End*/
+
+/*Spacing Common Styles Start*/
+.m-0{margin: 0!important}
+.p-0{padding: 0!important}
+.my-1{margin: 1rem 0!important;}
+.my-2{margin: 2rem 0!important;}
+.my-3{margin: 3rem 0!important;}
+.mx-auto{margin: 0 auto}
+/*Spacing Common Styles End*/
+
+/*Responsive Common Styles Start*/
+.d-flex{display: flex}
+.justify-content-between{justify-content: space-between}
+.align-items-center{align-items: center}
+.w-100{
+    display: block;
+    width: 100%;
+}
+.w-75{
+    display: block;
+    width: 75%;
+}
+.w-60{
+    display: block;
+    width: 60%;
+}
+.w-50{
+    display: block;
+    width: 50%;
+}
+.w-40{
+    display: block;
+    width: 40%;
+}
+.w-25{
+    display: block;
+    width: 25%;
+}
+.w-15{
+    display: block;
+    width: 15%;
+}
+.d-none{display: none!important;}
+/*Responsive Common Styles End*/
+
+
+
+@page { size: auto;  margin: 0 1rem; }
+#woo-invoice-stylist-actions button{
+    background-color: #eeeeee;
+    border-color: #eeeeee;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    background-color: rgba(0, 0, 0, 0);
+    background-color: #f0f0f0;
+    border-color: #f0f0f0;
+    color: #43454b;
+    cursor: pointer;
+    padding: .6180469716em 1.41575em;
+    text-decoration: none;
+    font-weight: 600;
+    text-shadow: none;
+    display: inline-block;
+    -webkit-appearance: none;
+    transition: .5s;
+}
+#woo-invoice-stylist-actions button:hover{
+    background-color: #e1e1e1;
+}
+/*Common Styles Start*/
+.list-style-none{list-style: none!important;}
+.border-top{border-top: 1px solid black;}
+/*Common Styles End*/
+

@@ -1,9 +1,13 @@
 <?php
-
+declare(strict_types=1);
 namespace inc;
 use inc\{
+    Config,
     AdminNavigation,
     Assets,
+    Order,
+    Translator,
+    Template,
     Setting
 };
 class WooInvoiceStylist
@@ -11,38 +15,19 @@ class WooInvoiceStylist
     public static string $app_name = 'woo-invoice-stylist';
     public static array $styles = [
         'style01',
+        'style02',
     ];
+    public static object $config;
     public static function init() : void
     {
+        self::$config = (object)Config::LoadConfig();
         add_action('admin_menu', array(AdminNavigation::class,'AddMenuItem'));
-        add_action('admin_enqueue_scripts', array(Assets::class,'LoadAssets'));
+        add_action('admin_enqueue_scripts', array(Assets::class,'LoadAdminAssets'));
         add_action('wp_enqueue_scripts', array(Assets::class,'LoadAssets'));
-        add_action( 'woocommerce_account_view-order_endpoint', array(self::class,'LoadInvoiceTemplate') );
+        add_filter( 'woocommerce_locate_template', array(Template::class,'LoadTemplate') , 10, 3 );
         add_action( 'admin_post_woo_invoice_stylist_action', array(Setting::class,'UpdateSetting') );
         add_action( 'admin_post_nopriv_woo_invoice_stylist_action', array(Setting::class,'UpdateSetting') );
-        add_action( 'plugins_loaded', array(self::class,'RegisterTranslator') );
-    }
-    public static function RegisterTranslator() : void
-    {
-        $plugin_dir = basename( dirname( __FILE__,2 ) ) . '/languages/';
-        load_plugin_textdomain( self::$app_name, false, $plugin_dir );
-    }
-    public static function LoadInvoiceTemplate( $order_id ): void
-    {
-        $template_root = plugin_dir_path( dirname(__FILE__) ) . 'view/styles/';
-        $order = wc_get_order( $order_id );
-        $order->get_items();
-        $setting = new Setting();
-        // Get Template
-        wc_get_template(
-            'style01.php',
-            [
-                'order'              => wc_get_order( $order_id ),
-                'setting'  => $setting
-            ],
-            '',
-            $template_root
-        );
+        add_action( 'plugins_loaded', array(Translator::class,'RegisterTranslator') );
     }
     protected static function UploadMedia( $file )
     {

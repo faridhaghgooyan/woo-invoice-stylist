@@ -1,106 +1,148 @@
+<!--Woo Invoice Stylist Start | Style 01-->
+<section id="woo-invoice-stylist" class="style01">
+    <!--Invoice Header Start-->
+    <div class="invoice-header">
+        <img src="<?php echo \inc\Setting::GetSetting('logo') ?>" alt="Store Logo" class="logo">
+        <div class="store-info">
+            <h5 class="store-name">
+                <?php echo \inc\Setting::GetSetting('title') ?>
+            </h5>
 
-<section id="woo-invoice-stylist-style1" class="invoice-style">
-    <div class="header" style="background-image: url(http://localhost/wp-content/uploads/2023/04/style1-back-rtl.jpg)">
-        <!--Invoice Store Info-->
-        <div class="identity">
-            <img src="<?php echo \inc\Setting::GetSetting('logo') ?>" class="invoice-logo" alt="">
-            <div class="invoice-store-info">
-                <h4 class="invoice-itle">
-                    <?php echo \inc\Setting::GetSetting('title') ?>
-                </h4>
-                <span class="website">
-                    <?php echo \inc\Setting::GetSetting('website') ?>
-                </span>
-            </div>
+            <p class="store-address">
+                <?php echo \inc\Setting::GetSetting('address') ?>
+            </p>
+            <p class="store-website">
+                <?php echo \inc\Setting::GetSetting('website') ?>
+            </p>
+            <p class="store-phone">
+                <?php echo \inc\Setting::GetSetting('tel') ?>
+            </p>
+            <p class="store-fax">
+                <?php echo \inc\Setting::GetSetting('fax') ?>
+            </p>
         </div>
-        <!--Invoice ID & Date-->
-        <div class="invoice-id-and-date">
-            <div class="id">
-                <?php _e('Invoice ID','woo-invoice-stylist'); ?>
-                :
-                <?php echo $order->get_id() ?>
-            </div>
-            <div class="date">
-                <?php _e('Invoice Date','woo-invoice-stylist'); ?>
-                :
-                <?php //echo $order->get_date_modified() ?>
-                <?php echo wc_format_datetime( $order->get_date_created() , 'j F, Y' ) ?>
-            </div>
+        <div class="invoice-date-and-id">
+            <span class="invoice-title">
+                <?php _e('invoice','woo-invoice-stylist'); ?>
+            </span>
+            <span class="date">
+                <?php echo $data->order->dates->created ?>
+            </span>
+            <span class="id">
+                # <?php echo $data->order->invoice_id ?>
+            </span>
         </div>
     </div>
-    <div class="body">
+    <!--Invoice Header End-->
 
-        <!--Customer Name and Phone-->
-        <div class="invoice-customer-name-and-phone">
-            <h6 class="customer-name">
-                <?php _e('Invoice Customer Name','woo-invoice-stylist'); ?>
-                :
-                <?php echo $order->get_formatted_billing_full_name() ?>
-            </h6>
-            <h6 class="customer-phone">
-                <?php _e('Invoice Customer Phone','woo-invoice-stylist'); ?>
-                :
-                <?php echo $order->get_billing_phone() ?>
-            </h6>
+    <!--Invoice Body Start-->
+    <div class="invoice-body">
+        <!--Customer Info-->
+        <div class="billing-info">
+            <h5 class="billing-title">
+                <?php _e('bill to','woo-invoice-stylist'); ?>
+            </h5>
+            <ul class="info-list">
+                <?php
+                    foreach ( $data->order->billing as $key => $item ) {
+                        $label = ucwords(str_replace('_', ' ', $key));
+                        echo "<li class='info-item'> <span class='label-name'>{$label}:</span>  {$item}  </li>";
+                    }
+                ?>
+            </ul>
         </div>
-        <!--Invoice Items-->
-        <table cellpadding="0" cellspacing="0">
+        <div class="shipping-info">
+            <h5 class="shipping-title">
+                <?php _e('ship to','woo-invoice-stylist'); ?>
+            </h5>
+            <ul class="info-list">
+                <?php
+                foreach ( $data->order->shipping as $key => $item ) {
+                    $label = ucwords(str_replace('_', ' ', $key));
+                    echo "<li class='info-item'> <span class='label-name'>{$label}:</span> {$item}  </li>";
+                }
+                ?>
+            </ul>
+        </div>
+        <!--Order Info-->
+        <table class="order-items has-background">
             <thead>
             <tr>
-                <th><?php _e('Description','woo-invoice-stylist'); ?></th>
-                <th><?php _e('Quantity','woo-invoice-stylist'); ?></th>
-                <th>
-                    <?php _e('Line Price','woo-invoice-stylist'); ?>
-                    - تومان
-                </th>
-                <th>
-                    <?php _e('Total Price','woo-invoice-stylist'); ?>
-                    - تومان
-                </th>
+                <th>description</th>
+                <th>qty</th>
+                <th>unit price</th>
+                <th>total</th>
             </tr>
             </thead>
+            <?php foreach ($data->order->items as $item_id => $item) {
+                echo "
+                <tr>
+                    <td>{$item->name}</td>
+                    <td>{$item->quantity}</td>
+                    <td>
+                        {$data->order->currency_symbol} 
+                        {$item->subtotal}
+                    </td>
+                    <td>
+                        {$data->order->currency_symbol} 
+                        {$item->total}
+                    </td>
+                </tr>
+                ";
+            }?>
             <tbody>
-            <?php foreach ($order->get_items() as $item_id => $item) : ?>
-            <tr>
-                <td><?php echo $item->get_name() ?></td>
-                <td><?php echo $item->get_quantity() ?></td>
-                <td><?php echo $item->get_total() / $item->get_quantity()  ?></td>
-                <td><?php echo $item->get_total()  ?></td>
-            </tr>
-            <?php endforeach; ?>
             </tbody>
-            <tfoot>
-            <tr>
-                <td colspan="2">
-                    <?php echo \inc\Setting::GetSetting('title') ?>
-                    <?php echo \inc\Setting::GetSetting('tel') ?>
-                </td>
-                <td><?php _e('Total Amount','woo-invoice-stylist'); ?></td>
-                <td>
-                    <?php echo number_format($order->get_total()) ?>
-                </td>
-            </tr>
-            </tfoot>
         </table>
-    </div>
-    <div class="footer">
-        <!--Store Signature-->
-        <div class="store-signature">
-            <?php _e('Store Signature','woo-invoice-stylist'); ?>
-            <img src="<?php echo \inc\Setting::GetSetting('signature') ?>" />
+        <!--Order Summary-->
+        <div class="order-summary-wrapper">
+            <ul class="order-summary">
+                <li class="summary-item">
+                    <div class="item-title">SUBTOTAL</div>
+                    <div class="item-value">
+                        <?php echo $data->order->currency_symbol ?>
+                        <?php echo $data->order->costs->subtotal ?>
+                    </div>
+                </li>
+                <li class="summary-item">
+                    <div class="item-title">DISCOUNT</div>
+                    <div class="item-value">
+                        <?php echo $data->order->currency_symbol ?>
+                        <?php echo $data->order->costs->discount ?>
+                    </div>
+                </li>
+                <li class="summary-item">
+                    <div class="item-title">TOTAL TAX</div>
+                    <div class="item-value">
+                        <?php echo $data->order->currency_symbol ?>
+                        <?php echo $data->order->costs->tax ?>
+                    </div>
+                </li>
+                <li class="summary-item">
+                    <div class="item-title">SHIPPING</div>
+                    <div class="item-value">
+                        <?php echo $data->order->currency_symbol ?>
+                        <?php echo $data->order->costs->shipping ?>
+                    </div>
+                </li>
+                <li class="summary-item">
+                    <div class="item-title">Balance Due</div>
+                    <div class="item-value">
+                        <?php echo $data->order->currency_symbol ?>
+                        <?php echo $data->order->costs->total ?>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <div class="user-signature">
-            <?php _e('User Signature','woo-invoice-stylist'); ?>
-        </div>
-        <!--Use Signature-->
     </div>
-    <!--Invoice Actions-->
-    <div class="invoice-actions">
-        <button class="print-action" onclick="WooInvoiceStylistPrint(event)">
-            <?php _e('Print','woo-invoice-stylist'); ?>
-        </button>
-        <button class="save-pdf-action" onclick="WooInvoiceStylistSavePDF(event)">
-            <?php _e('Save As PDF','woo-invoice-stylist'); ?>
-        </button>
-    </div>
+    <!--Invoice Body End-->
+
+    <!--Invoice Footer Start-->
+    <div class="invoice-footer"></div>
+    <!--Invoice Footer End-->
+
+</section>
+<!--Woo Invoice Stylist End | Style 01-->
+<section id="woo-invoice-stylist-actions">
+    <button onclick="WooInvoiceStylist.Print(event)"><?php _e('Print','woo-invoice-stylist'); ?></button>
+    <button onclick="WooInvoiceStylist.SaveAsPDF(event)"><?php _e('Save As PDF','woo-invoice-stylist'); ?></button>
 </section>

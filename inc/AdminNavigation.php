@@ -17,6 +17,6 @@ class AdminNavigation
     }
     public static function MenuItemHandler()
     {
-        ViewLoader::LoadView('admin','setting/index');
+        ViewLoader::LoadView('admin','setting');
     }
 }

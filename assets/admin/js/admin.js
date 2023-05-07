@@ -11,14 +11,3 @@ jQuery(document).ready(function($) {
         $(targetDiv).show();
     });
 });
-
-function WooInvoiceStylistPrint(event){
-    const printContent = event.target.closest('section.invoice-style').outerHTML;
-    const originalContent = document.body.innerHTML;
-    document.body.innerHTML = printContent;
-    window.print();
-    document.body.innerHTML = originalContent;
-}
-function WooInvoiceStylistSavePDF(event){
-
-}

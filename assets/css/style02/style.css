@@ -1,0 +1,32 @@
+/*Base Font Variables*/
+.style02{}
+.style02 .invoice-header{
+    display: flex;
+    justify-content: space-between;
+}
+.style02 .invoice-header .invoice-keyword{
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: var(--style-main-color);
+}
+.style02 table.order-items tbody tr:first-of-type td:not(:first-of-type){
+    border-top: 1px solid black;
+}
+.style02 table.order-items tr :where(td,th){
+    text-align: center;
+    text-transform: capitalize;
+}
+.style02 table.order-items tr :where(td:first-of-type,th:first-of-type){
+    background-color: var(--color-primary);
+    text-align: center;
+    color: white;
+}
+.style02 .invoice-footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-primary);
+    padding: .5rem;
+    color: white;
+    font-size: var(--font-size-xs);
+}
