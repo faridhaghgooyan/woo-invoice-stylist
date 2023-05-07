@@ -76,7 +76,7 @@ To buy me a coffee, simply click the button below to visit my Buy Me A Coffee pa
 
 ## :balance_scale: License ##
 
-This plugin is licensed under the MIT License.
+This plugin is licensed under the GPLv2 License.
 
 
 ## :memo: Sources ##
