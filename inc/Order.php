@@ -5,6 +5,13 @@ namespace inc;
 class Order
 {
     private static object $order;
+    /**
+     * Returns an object with various data about a WooCommerce order.
+     *
+     * @param int $order_id The ID of the order to retrieve data for.
+     * @return object An object containing various data about the order, including invoice ID, dates, items, customer data, shipping data, billing data, costs, order notes, currency information, and payment gateway information.
+     */
+
     public static function GetOrder( $order_id ) : object
     {
         $order = wc_get_order( $order_id) ;
@@ -32,7 +39,11 @@ class Order
             'gateway'          => self::$order ->get_payment_method(),
         ];
     }
-
+    /**
+     * Get all items associated with the current order.
+     *
+     * @return array An array of items, each containing an "id", "name", "price", and "quantity" field.
+     */
     private static function GetItems() : array
     {
         $items = [];
